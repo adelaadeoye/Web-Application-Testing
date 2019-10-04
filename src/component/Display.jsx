@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Display() {
+export default function Display(props) {
   const classes = useStyles();
 
   return (
@@ -23,21 +23,22 @@ export default function Display() {
       <Grid container spacing={3}>
       <Grid item xs={6}>
           <Paper className={classes.paper}>
-          <Typography variant="h3" component="h3">
+          <Typography variant="h3" component="h3" data-testid="ball">
           BALLS
         </Typography>
-        <Typography variant="h1" component="h1">
-          0
+        <Typography variant="h1" component="h1"  data-testid="ballCount">
+        {props.ball}
         </Typography>
           </Paper>
           
         </Grid> 
         <Grid item xs={6}>
-          <Paper className={classes.paper}><Typography variant="h3" component="h3">
+          <Paper className={classes.paper}><Typography variant="h3" component="h3"data-testid="strike">
           STRIKES
         </Typography>
-        <Typography variant="h1" component="h1">
-          0
+        <Typography variant="h1" component="h1" data-testid="strikeCount">
+        {props.strike}
+
         </Typography>
         </Paper>
         
